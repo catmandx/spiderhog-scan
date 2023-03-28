@@ -1,0 +1,84 @@
+detectors:
+- name: AWS API Gateway
+  keywords:
+  - amazonaws
+  regex:
+    secret: '[0-9a-z]{3,100}.execute-api.[0-9a-z.-_]+.amazonaws.com'
+
+- name: AWS ARN
+  keywords:
+  - aws
+  regex:
+    secret: 'arn:aws:[a-z0-9-]+:[a-z]{2}-[a-z]+-[0-9]+:[0-9]+:.+'
+
+- name: AWS AppSync GraphQL Key
+  keywords:
+  - da2-
+  regex:
+    secret: 'da2-[a-z0-9]{26}'
+
+- name: AWS CloudFront
+  keywords:
+  - cloudfront
+  regex:
+    secret: '[0-9a-z.-_]+.cloudfront.net'
+
+- name: AWS Identity Pool
+  keywords:
+  - ap-southeast-1
+  regex:
+    key: ap-southeast-1:([\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20})'
+
+- name: AWS EC2 External
+  keywords:
+  - compute
+  regex:
+    secret: 'ec2-[0-9a-z.-_]+.compute(-1)?.amazonaws.com'
+
+- name: AWS EC2 Internal
+  keywords:
+  - internal
+  regex:
+    secret: '[0-9a-z.-_]+.compute(-1)?.internal'
+
+- name: AWS ELB
+  keywords:
+  - elb
+  regex:
+    secret: '[0-9a-z.-_]+.elb.amazonaws.com'
+
+- name: AWS ElasticCache
+  keywords:
+  - cache
+  regex:
+    secret: '[0-9a-z.-_]+.cache.amazonaws.com'
+
+- name: AWS MWS ID
+  keywords:
+  - mws
+  regex:
+    secret: 'mzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+
+- name: AWS MWS key
+  keywords:
+  - mws
+  regex:
+    secret: 'amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
+
+- name: AWS S3 Bucket
+  keywords:
+  - s3
+  regex:
+    secret: 's3://[0-9a-z.-_/]+'
+
+- name: AWS S3 Endpoint
+  keywords:
+  - s3
+  regex:
+    secret: '[a-zA-Z0-9.-_]{3,100}.s3.[a-zA-Z0-9.-_]+.amazonaws.com'
+
+- name: AWS Identity Pool
+  keywords:
+  - ap-southeast-1
+  regex:
+    key: ap-southeast-1:([\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20}-[\d\w]{3,20})
