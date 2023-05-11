@@ -154,3 +154,5 @@ raw/*
 results/*
 examples.txt
 toscan.txt
+.*
+trufflehog.exe

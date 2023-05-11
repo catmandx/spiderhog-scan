@@ -33,7 +33,7 @@ def extract_js_from_index_vue_like(index_content):
 
 def extract_js_from_index_react_like_chunk(prefix, index_content):
     results = []
-    match = re.search('({(?:\\d\\w{1,10}:"[\\d\\w]{5,10}",*)+}).{1,30}.chunk.js', index_content)
+    match = re.search('({(?:[\\d\\w]{1,10}:"[\\d\\w]{5,10}",*)+}).{1,30}.chunk.js', index_content)
     if match:
         match = match.group(0)
         submatches = re.findall('(\\d{1,3}):"([\\d\\w]{5,10})"', match)

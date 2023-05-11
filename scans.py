@@ -61,7 +61,7 @@ def scan_site(sites_to_scan, sites_scanned, sites_no_results):
             if debug: print("List for ",site," after dedup:", js_files)
             download.download_all_files(site, prefix, js_files, index_text)
             if debug: print("Downloaded all files for ", site, ". Running trufflehog:")
-            p = check_output( '.\\trufflehog.exe --no-update --config=trufflehogconf.yaml -j filesystem ' + "raw/" + urlparse(site).netloc + "/js"  )
+            p = check_output( '.\\trufflehog.exe --no-update --config=trufflehogconf.yaml filesystem ' + "raw/" + urlparse(site).netloc + "/js"  )
         
             if p:
                 with open("results/"+urlparse(site).netloc+".txt", 'wb') as file:
