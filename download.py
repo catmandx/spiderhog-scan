@@ -49,11 +49,12 @@ def download_url_to_file(url, link, path, index_text):
     if link is None or link == '../' or 'vendors' in link:
         return (link, None)
     # check for no file extension
-    if not (link[-4] == '.' or link[-3] == '.' ):
-        return (link, None)
     if link == url: #index.html
         absurl = url
         filename = 'index.html'
+    elif not (link[-4] == '.' or link[-3] == '.' ):
+        print (link)
+        return (link, None)
     else:
         # convert relative link to absolute link
         absurl = url_normalize(urljoin(url, link))
@@ -61,7 +62,7 @@ def download_url_to_file(url, link, path, index_text):
         filename = basename(absurl)
     # download the content of the file
     data = download_url(absurl)
-    if data == index_text:
+    if data == index_text and link != url:
         return (link, None)
     # construct the output path
     outpath = join(path, filename)
